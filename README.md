@@ -17,7 +17,7 @@ import decode from "pogo-decode";
 let req = fs.readFileSync("./dumps/getplayer_req.dump");
 let res = fs.readFileSync("./dumps/getplayer_res.dump");
 
-console.log(decode(req, req)); // decoded request and response object
+console.log(decode(req, res)); // decoded request and response object
 ```
 
 
