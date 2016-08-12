@@ -1,0 +1,97 @@
+{
+  "request": [
+    {
+      "name": "GetDownloadUrlsMessage",
+      "request": {
+        "asset_id": [
+          "22104024-0f79-4adb-9b0e-c710e0a7301f/1467338229269000"
+        ]
+      }
+    },
+    {
+      "name": "GetHatchedEggsMessage",
+      "request": {}
+    },
+    {
+      "name": "GetInventoryMessage",
+      "request": {
+        "last_timestamp_ms": {
+          "low": 2106264582,
+          "high": 342,
+          "unsigned": false
+        },
+        "item_been_seen": 0
+      }
+    },
+    {
+      "name": "CheckAwardedBadgesMessage",
+      "request": {}
+    },
+    {
+      "name": "DownloadSettingsMessage",
+      "request": {
+        "hash": "2788184af4004004d6ab0740f7632983332106f6"
+      }
+    }
+  ],
+  "response": [
+    {
+      "name": "GetDownloadUrlsResponse",
+      "request": {
+        "download_urls": [
+          {
+            "asset_id": "22104024-0f79-4adb-9b0e-c710e0a7301f/1467338229269000",
+            "url": "https://storage.googleapis.com/cloud_assets_pgorelease/bundles/android/pm0133?generation=1467338229269000&GoogleAccessId=pgorelease-service-account@pgorelease.iam.gserviceaccount.com&Expires=1470985381&Signature=WLOfYebwzhRVXCWNJVKMOyaZo8FUBKgQiClpMs6e%2FLQt0Z83QHSkBW0kLVzaxa6qGm05vWno7Iu3Tan%2BSxTcLsPtg7q2OgkczbbAie7uwYOfxWhYe2pfNnnx8NCirCkGnSAmA6PyL9y6K%2FO%2B9DfheDbO03vsjJudEQaHxabKlMJ8hTr2%2F81XEMPJrq6NjrtUFdF3cyCVyK%2B2vD77jHvVColhE6a5LS4ReFkaLx4PkVDpJqgn8nwxus0DP4s7LUhKdQuFWM%2By%2BQpgGLf%2BWQBJQqQh72MgGZEP4Rbwl3kkpSNFwOnAwg9mZ9e0iiofB6LbhyjYr97K44GGLy8wD4Ijfg%3D%3D",
+            "size": 551221,
+            "checksum": 2667934853
+          }
+        ]
+      }
+    },
+    {
+      "name": "GetHatchedEggsResponse",
+      "request": {
+        "success": true,
+        "pokemon_id": [],
+        "experience_awarded": [],
+        "candy_awarded": [],
+        "stardust_awarded": []
+      }
+    },
+    {
+      "name": "GetInventoryResponse",
+      "request": {
+        "success": true,
+        "inventory_delta": {
+          "original_timestamp_ms": {
+            "low": 2106264582,
+            "high": 342,
+            "unsigned": false
+          },
+          "new_timestamp_ms": {
+            "low": 2106264582,
+            "high": 342,
+            "unsigned": false
+          },
+          "inventory_items": []
+        }
+      }
+    },
+    {
+      "name": "CheckAwardedBadgesResponse",
+      "request": {
+        "success": true,
+        "awarded_badges": [],
+        "awarded_badge_levels": []
+      }
+    },
+    {
+      "name": "DownloadSettingsResponse",
+      "request": {
+        "error": "",
+        "hash": "2788184af4004004d6ab0740f7632983332106f6",
+        "settings": null
+      }
+    }
+  ]
+}

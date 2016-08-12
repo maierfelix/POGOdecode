@@ -13,7 +13,9 @@ function getRequestType(req) {
 
 function generateResponseKey(id) {
   var key = getRequestType(id).toLowerCase();
-  var respKey = key[0].toUpperCase() + key.substring(1, key.length).replace(/_\s*([a-z])/g, (d, e) => { return e.toUpperCase(); });
+  var respKey = key[0].toUpperCase() + key.substring(1, key.length).replace(/_\s*([a-z])/g, function(d, e) {
+    return e.toUpperCase();
+  });
   return (respKey);
 };
 
@@ -27,6 +29,10 @@ function dump(req, res) {
 
   var deco_req = proto.Networking.Envelopes.RequestEnvelope.decode(req);
   var deco_res = proto.Networking.Envelopes.ResponseEnvelope.decode(res);
+
+  if (deco_req.requests.length !== deco_res.returns.length) {
+    throw new Error("Request length doesnt match response length");
+  }
 
   var requests = [];
   var responses = [];
