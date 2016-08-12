@@ -1,6 +1,6 @@
 {
   "name": "pogo-decode",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Pokemon GO traffic decoder",
   "license": "MIT",
   "repository": "https://github.com/maierfelix/pogodecode",
