@@ -41,7 +41,7 @@ function dump(req, res, opt) {
   var responses = [];
 
   var ii = 0;
-  var length = deco_res.returns.length;
+  var length = deco_req.requests.length;
 
   for (; ii < length; ++ii) {
     var key = generateResponseKey(deco_req.requests[ii]);
@@ -50,6 +50,10 @@ function dump(req, res, opt) {
     if (opt.decodeLongs === true) {
       decodeLongs(req_result);
       decodeLongs(res_result);
+    }
+    if (opt.removeNulls === true) {
+      removeNulls(req_result);
+      removeNulls(res_result);
     }
     requests.push({
       name: key + "Message",
@@ -84,6 +88,22 @@ function decodeLongs(obj) {
         obj[key] = parseInt(value.toString());
       }
       decodeLongs(node);
+    }
+  };
+
+};
+
+function removeNulls(obj) {
+
+  var node = null;
+
+  for (var key in obj) {
+    node = obj[key];
+    if (node === null) {
+      delete obj[key];
+    }
+    else if (typeof node === "object") {
+      removeNulls(node);
     }
   };
 

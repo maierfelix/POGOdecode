@@ -18,7 +18,8 @@ var req = fs.readFileSync("0_req.dump");
 var res = fs.readFileSync("0_res.dump");
 
 var options = {
-  decodeLongs: true
+  decodeLongs: true,
+  removeNulls: true
 };
 
 var output = decode(req, res, options); // returns decoded request and response
@@ -40,5 +41,6 @@ var output = decode(req, res, options); // returns decoded request and response
 | Parameter       | Type            | Description
 |-----------------|-----------------|---------------
 | decodeLong      | *boolean*       | Automatically decode longs
+| removeNulls     | *boolean*       | Remove all null keys
 
 ---
