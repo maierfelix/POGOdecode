@@ -10,17 +10,35 @@ $ npm install --save pogo-decode
 
 ## Usage
 ```js
-import fs from "fs";
-import decode from "pogo-decode";
+var fs = require("fs");
+var decode = require("../index.js");
 
 // both raw pokemon go traffic dumps
-let req = fs.readFileSync("./dumps/getplayer_req.dump");
-let res = fs.readFileSync("./dumps/getplayer_res.dump");
+var req = fs.readFileSync("0_req.dump");
+var res = fs.readFileSync("0_res.dump");
 
-console.log(decode(req, res)); // decoded request and response object
+var options = {
+  decodeLongs: true
+};
+
+var output = decode(req, res, options); // returns decoded request and response
 ```
-
 
 ## API
 
-### decode(req: Buffer, res: Buffer) => object
+### decode(request, response, options)
+
+| Parameter       | Type            | Description
+|-----------------|-----------------|---------------
+| request         | *Buffer*        | Request buffer 
+| response        | *Buffer*        | Response buffer
+| options         | *object*        | [Options](#options)
+| @returns        | *object*        | Corresponding output
+
+## Options
+
+| Parameter       | Type            | Description
+|-----------------|-----------------|---------------
+| decodeLong      | *boolean*       | Automatically decode longs
+
+---

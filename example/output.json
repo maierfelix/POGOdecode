@@ -15,11 +15,7 @@
     {
       "name": "GetInventoryMessage",
       "request": {
-        "last_timestamp_ms": {
-          "low": 2106264582,
-          "high": 342,
-          "unsigned": false
-        },
+        "last_timestamp_ms": 9046337496413110000,
         "item_been_seen": 0
       }
     },
@@ -63,16 +59,8 @@
       "request": {
         "success": true,
         "inventory_delta": {
-          "original_timestamp_ms": {
-            "low": 2106264582,
-            "high": 342,
-            "unsigned": false
-          },
-          "new_timestamp_ms": {
-            "low": 2106264582,
-            "high": 342,
-            "unsigned": false
-          },
+          "original_timestamp_ms": 9046337496413110000,
+          "new_timestamp_ms": 9046337496413110000,
           "inventory_items": []
         }
       }

@@ -5,6 +5,10 @@ var decode = require("../index.js");
 var req = fs.readFileSync("0_req.dump");
 var res = fs.readFileSync("0_res.dump");
 
-var output = decode(req, res); // decoded request and response object
+var options = {
+  decodeLongs: true
+};
+
+var output = decode(req, res, options); // returns decoded request and response
 
 fs.writeFileSync("output.json", JSON.stringify(output, null, 2));
