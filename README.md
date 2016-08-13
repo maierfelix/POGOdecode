@@ -42,5 +42,6 @@ var output = decode(req, res, options); // returns decoded request and response
 |-----------------|-----------------|---------------
 | decodeLong      | *boolean*       | Automatically decode longs
 | removeNulls     | *boolean*       | Remove all null keys
+| encodeBuffers   | *boolean*       | Encode buffers to binary
 
 ---

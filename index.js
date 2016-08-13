@@ -47,6 +47,9 @@ function dump(req, res, opt) {
     var key = generateResponseKey(deco_req.requests[ii]);
     var req_result = proto.Networking.Requests.Messages[key + "Message"].decode(deco_req.requests[ii].request_message);
     var res_result = proto.Networking.Responses[key + "Response"].decode(deco_res.returns[ii]);
+
+    // obj manipulation
+    // TODO: merge each recursion into one
     if (opt.decodeLongs === true) {
       decodeLongs(req_result);
       decodeLongs(res_result);
@@ -55,6 +58,11 @@ function dump(req, res, opt) {
       removeNulls(req_result);
       removeNulls(res_result);
     }
+    if (opt.encodeBuffers === true) {
+      encodeBuffers(req_result);
+      encodeBuffers(res_result);
+    }
+
     requests.push({
       name: key + "Message",
       request: req_result
@@ -104,6 +112,22 @@ function removeNulls(obj) {
     }
     else if (typeof node === "object") {
       removeNulls(node);
+    }
+  };
+
+};
+
+function encodeBuffers(obj) {
+
+  var node = null;
+
+  for (var key in obj) {
+    node = obj[key];
+    if (typeof node === "object") {
+      if (node.hasOwnProperty("buffer")) {
+        obj[key] = node.toBinary();
+      }
+      encodeBuffers(node);
     }
   };
 
