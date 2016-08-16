@@ -1,3 +1,5 @@
+"use strict";
+
 var fs = require("fs");
 var long = require("long");
 var proto = require("./proto.js");

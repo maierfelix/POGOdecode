@@ -1,4 +1,4 @@
-const protobuf = require("protobufjs");
-const path = require("path");
+var pogo = require("node-pogo-protos");
+var path = require("path");
 
-module.exports = protobuf.loadProtoFile({ root: path.join(__dirname, "./"), file: "POGOProtos/POGOProtos.proto" }).build("POGOProtos");
+module.exports = pogo;
