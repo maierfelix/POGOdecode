@@ -19,7 +19,8 @@ var res = fs.readFileSync("0_res.dump");
 
 var options = {
   decodeLongs: true,
-  removeNulls: true
+  removeNulls: true,
+  encodeBuffers: true
 };
 
 var output = decode(req, res, options); // returns decoded request and response
