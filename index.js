@@ -127,7 +127,7 @@ function encodeBuffers(obj) {
     node = obj[key];
     if (typeof node === "object") {
       if (node.hasOwnProperty("buffer")) {
-        obj[key] = node.toBinary();
+        obj[key] = node.toString("base64");
       }
       encodeBuffers(node);
     }
